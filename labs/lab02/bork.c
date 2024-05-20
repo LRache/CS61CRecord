@@ -7,7 +7,9 @@
 #include <string.h>
 
 char *alloc_str(int len) {
-    return malloc(len*sizeof(char));
+    char *s = (char*) malloc((len+1)*(sizeof(char)));
+    s[len] = '\0';
+    return s;
 }
 
 /* Str helper functions */
@@ -43,6 +45,7 @@ Str concat(Str a, Str b) {
 
 /* translates a letter to Bork */
 Str translate_to_bork(char c) {
+    
     switch(c) {
     case 'a': case 'e': case 'i': case 'o': case 'u': {
         char *res = alloc_str(2);
@@ -72,5 +75,7 @@ int main(int argc, char*argv[]) {
     printf("Input string: \"%s\"\n", src_str.data);
     printf("Length of translated string: %d\n", dest_str.len);
     printf("Translate to Bork: \"%s\"\n", dest_str.data);
+
+    free(dest_str.data);
     return 0;
 }
