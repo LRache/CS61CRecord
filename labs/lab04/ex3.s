@@ -34,6 +34,10 @@ ex3:
     #     where ^ is the exponent operator, not XOR
 
     # return 1 if a1 == 0
+    addi sp, sp, -8
+    sw a1, 0(sp)
+    sw ra, 4(sp)
+
     beq a1 x0 ex3_zero_case
 
     # otherwise, return ex3(a0, a1-1) * a0
@@ -52,4 +56,8 @@ ex3_zero_case:
     li a0 1
 
 ex3_end:
+    lw a1, 0(sp)
+    lw ra, 4(sp)
+    addi sp, sp, 8
+
     jr ra
