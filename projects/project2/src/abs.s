@@ -12,7 +12,12 @@ abs:
     # Prologue
 
     # PASTE HERE
-
+    lw t0 0(a0)
+    bgt t0, zero, return
+    sub t0, zero, t0
+    
+return:
+    sw t0 0(a0)
     # Epilogue
 
     jr ra

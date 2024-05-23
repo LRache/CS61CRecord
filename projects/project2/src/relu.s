@@ -14,24 +14,29 @@
 # ==============================================================================
 relu:
     # Prologue
+    beq a1, zero, loop_end
+    mv t0, a1
+    li t1, 1
+    bge t0, t1, loop_init
+    
+    li a0, 36
+    j exit
 
-
+loop_init:
+    mv t0, zero
+    mv t1, a0
 loop_start:
-
-
-
-
-
-
-
-
+    lw t2, 0(t1)
+    bgt t2, zero, loop_continue
+    mv t2, zero
+    
 loop_continue:
-
-
+    sw t2, 0(t1)
+    addi t0, t0, 1
+    addi t1, t1, 4
+    blt t0, a1, loop_start
 
 loop_end:
-
-
     # Epilogue
 
 
