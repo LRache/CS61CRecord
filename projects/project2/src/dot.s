@@ -18,9 +18,15 @@
 #     this function terminates the program with error code 37
 # =======================================================
 dot:
-
+    li t0, 1
+    blt a2, t0, dot_error_exit
+    blt a3, t0, dot_error_exit
+    blt a4, t0, dot_error_exit
+    j loop_start
     # Prologue
-
+dot_error_exit
+    li a0. 36
+    j exit
 
 loop_start:
 
