@@ -25,18 +25,21 @@
 #     this function terminates the program with error code 29
 # ==============================================================================
 read_matrix:
+    addi sp, sp, -8
+    sw ra, 0(sp)
+    sw s0, 4(sp)
 
-    # Prologue
+    mv t0, a0
+    mul a0, t1, t2
+    slli, a0, a0, 2
 
+    jal malloc
+    
+    
 
-
-
-
-
-
-
-
-    # Epilogue
-
-
+    lw ra, 0(sp)
+    lw s0, 4(sp)
     jr ra
+
+malloc_error:
+    
