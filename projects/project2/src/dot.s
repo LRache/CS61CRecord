@@ -66,6 +66,8 @@ loop_end:
     lw s0, 0(sp)
     lw s1, 4(sp)
     lw s2, 8(sp)
+    lw a3, 12(sp)
+    lw a4, 16(sp)
     addi sp, sp, 20
 
     jr ra
