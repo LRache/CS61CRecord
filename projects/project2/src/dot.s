@@ -33,12 +33,10 @@ dot_error2_exit:
     j exit
 
 loop_init:
-    addi sp, sp, -20
+    addi sp, sp, -12
     sw s0, 0(sp)
     sw s1, 4(sp)
     sw s2, 8(sp)
-    sw a3, 12(sp)
-    sw a4, 16(sp)
 
     mv t0, a0 #array1 ptr
     mv t1, a1 #array2 ptr
@@ -66,8 +64,6 @@ loop_end:
     lw s0, 0(sp)
     lw s1, 4(sp)
     lw s2, 8(sp)
-    lw a3, 12(sp)
-    lw a4, 16(sp)
-    addi sp, sp, 20
+    addi sp, sp, 12
 
     jr ra

@@ -23,18 +23,61 @@
 #     this function terminates the program with error code 30
 # ==============================================================================
 write_matrix:
+    addi sp, sp, -32
+    sw ra, 0(sp)
+    sw s0, 4(sp)
+    sw s1, 8(sp)
+    sw s2, 12(sp)
+    sw s3, 16(sp)
+    sw s4, 20(sp)
 
-    # Prologue
+    mv s0, a1 # matrix ptr
+    mul s1, a2, a3 # elements count
+    sw a2, 24(sp)
+    sw a3, 28(sp)
 
+    li a1, 1 # write only
+    jal fopen
+    li t0, -1
+    beq a0, t0, write_matrix_fopen_error
+    mv s2, a0 # file descriptor
 
+    addi a1, sp, 24
+    li a2, 2
+    li a3, 4
+    jal fwrite
+    li t0, 2
+    bne a0, t0, write_matrix_fwrite_error
 
+    mv a0, s2
+    mv a1, s0
+    mv a2, s1
+    li a3, 4
+    jal fwrite
+    bne a0, s1, write_matrix_fwrite_error
 
+    mv a0, s2
+    jal fclose
+    bne a0, zero write_matrix_fclose_error
 
-
-
-
-
-    # Epilogue
-
+    lw ra, 0(sp)
+    lw s0, 4(sp)
+    lw s1, 8(sp)
+    lw s2, 12(sp)
+    lw s3, 16(sp)
+    lw s4, 20(sp)
+    addi sp, sp, 32
 
     jr ra
+
+write_matrix_fopen_error:
+    li a0, 27
+    j exit
+
+write_matrix_fclose_error:
+    li a0, 28
+    j exit
+
+write_matrix_fwrite_error:
+    li a0, 30
+    j exit

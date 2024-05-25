@@ -33,21 +33,15 @@ matmul:
     bne a2, a4, matmul_error
     
     # Prologue
-    addi sp, sp, -56
-    sw a0, 0(sp)
-    sw a1, 4(sp)
-    sw a2, 8(sp)
-    sw a3, 12(sp)
-    sw a4, 16(sp)
-    sw s0, 20(sp)
-    sw s1, 24(sp)
-    sw s2, 28(sp)
-    sw s3, 32(sp)
-    sw s4, 36(sp)
-    sw s5, 40(sp)
-    sw ra, 44(sp)
-    sw a6, 48(sp)
-    sw s7, 52(sp)
+    addi sp, sp, -32
+    sw s0, 0(sp)
+    sw s1, 4(sp)
+    sw s2, 8(sp)
+    sw s3, 12(sp)
+    sw s4, 16(sp)
+    sw s5, 20(sp)
+    sw ra, 24(sp)
+    sw s7, 28(sp)
     
     mv s0, a0 # m0 ptr
     mv s1, a1 # m0 rows
@@ -66,7 +60,18 @@ outer_loop_start:
 inner_loop_start:
     mv a0, s0
     mv a1, s2
+    addi sp, sp, -16
+    sw a2, 0(sp)
+    sw a3, 4(sp)
+    sw a4, 8(sp)
+    sw a6, 12(sp)
     jal dot
+    lw a2, 0(sp)
+    lw a3, 4(sp)
+    lw a4, 8(sp)
+    lw a6, 12(sp)
+    addi sp, sp, 16
+
     sw a0, 0(a6)
 
 inner_loop_end:
@@ -78,25 +83,19 @@ inner_loop_end:
 outer_loop_end:
     addi s3, s3, 1
     slli t0, a2, 2
-    add s0, s0, a2
+    add s0, s0, t0
     bne s3, s1, outer_loop_start
 
     # Epilogue
-    lw a0, 0(sp)
-    lw a1, 4(sp)
-    lw a2, 8(sp)
-    lw a3, 12(sp)
-    lw a4, 16(sp)
-    lw s0, 20(sp)
-    lw s1, 24(sp)
-    lw s2, 28(sp)
-    lw s3, 32(sp)
-    lw s4, 36(sp)
-    lw s5, 40(sp)
-    lw ra, 44(sp)
-    lw a6, 48(sp)
-    lw s7, 52(sp)
-    addi sp, sp, 56
+    lw s0, 0(sp)
+    lw s1, 4(sp)
+    lw s2, 8(sp)
+    lw s3, 12(sp)
+    lw s4, 16(sp)
+    lw s5, 20(sp)
+    lw ra, 24(sp)
+    lw s7, 28(sp)
+    addi sp, sp, 32
 
     jr ra
 
