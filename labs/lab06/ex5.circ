@@ -147,7 +147,7 @@
     </comp>
     <comp lib="0" loc="(210,500)" name="Splitter">
       <a name="appear" val="center"/>
-      <a name="bit1" val="0"/>
+      <a name="bit1" val="none"/>
       <a name="bit10" val="1"/>
       <a name="bit11" val="1"/>
       <a name="bit12" val="1"/>
@@ -232,7 +232,7 @@
     </comp>
     <comp lib="0" loc="(290,450)" name="Tunnel">
       <a name="label" val="bits_five"/>
-      <a name="width" val="3"/>
+      <a name="width" val="2"/>
     </comp>
     <comp lib="0" loc="(290,500)" name="Tunnel">
       <a name="label" val="five_rest_zero"/>
@@ -257,7 +257,7 @@
     <comp lib="0" loc="(540,630)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="bits_five"/>
-      <a name="width" val="3"/>
+      <a name="width" val="2"/>
     </comp>
     <comp lib="0" loc="(540,710)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -297,8 +297,8 @@
       <a name="width" val="28"/>
     </comp>
     <comp lib="0" loc="(550,660)" name="Constant">
-      <a name="value" val="0x7"/>
-      <a name="width" val="3"/>
+      <a name="value" val="0x3"/>
+      <a name="width" val="2"/>
     </comp>
     <comp lib="0" loc="(550,740)" name="Constant">
       <a name="value" val="0x0"/>
@@ -367,7 +367,7 @@
       <a name="width" val="28"/>
     </comp>
     <comp lib="3" loc="(620,640)" name="Comparator">
-      <a name="width" val="3"/>
+      <a name="width" val="2"/>
     </comp>
     <comp lib="3" loc="(620,720)" name="Comparator">
       <a name="width" val="29"/>
@@ -432,7 +432,7 @@
     <wire from="(620,280)" to="(670,280)"/>
     <wire from="(620,350)" to="(670,350)"/>
     <wire from="(620,420)" to="(670,420)"/>
-    <wire from="(620,520)" to="(670,520)"/>
+    <wire from="(620,500)" to="(670,500)"/>
     <wire from="(620,640)" to="(650,640)"/>
     <wire from="(620,720)" to="(650,720)"/>
     <wire from="(620,800)" to="(650,800)"/>
@@ -445,6 +445,7 @@
     <wire from="(650,820)" to="(670,820)"/>
     <wire from="(650,860)" to="(650,880)"/>
     <wire from="(650,860)" to="(670,860)"/>
+    <wire from="(670,500)" to="(670,520)"/>
     <wire from="(70,700)" to="(280,700)"/>
     <wire from="(70,700)" to="(70,750)"/>
     <wire from="(70,750)" to="(100,750)"/>
