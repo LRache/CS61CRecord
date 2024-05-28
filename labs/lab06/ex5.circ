@@ -80,8 +80,8 @@
     <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(170,300)" name="Pin">
       <a name="appearance" val="classic"/>
-      <a name="locked" val="true"/>
       <a name="label" val="clk"/>
+      <a name="locked" val="true"/>
     </comp>
     <comp lib="0" loc="(170,400)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -101,9 +101,9 @@
     <comp lib="0" loc="(180,270)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="num"/>
+      <a name="locked" val="true"/>
       <a name="radix" val="16"/>
       <a name="width" val="32"/>
-      <a name="locked" val="true"/>
     </comp>
     <comp lib="0" loc="(210,400)" name="Splitter">
       <a name="appear" val="center"/>
