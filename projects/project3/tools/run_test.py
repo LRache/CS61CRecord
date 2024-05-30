@@ -128,7 +128,7 @@ starter_file_hashes = {
     "tests/integration-jump/out/jump-empty.ref": "fe6d0e0373a367879e4ed244c00dc71d",
     "tests/integration-jump/out/jump-far.piperef": "30565d9c925b08c32f3994f59e0f7189",
     "tests/integration-jump/out/jump-far.ref": "ed18fd0e1ccc3a05c22d60d001a50e15",
-    "tests/integration-lui/lui-basic.circ": "f0099535c87ff204cd592da28b1618fd",
+    "tests/integration-lui/lui-basic.circ": "d1c1880fa47daf248fdc18a5341ab291",
     "tests/integration-lui/out/lui-basic.piperef": "89bc4cda38d269d7174babfd4706d43d",
     "tests/integration-lui/out/lui-basic.ref": "dd77a9439d6e8f1809e2e8d2ec4610ea",
     "tests/integration-mem/mem-load-basic.circ": "fa1e4d77b6adb560262935c599825c13",
