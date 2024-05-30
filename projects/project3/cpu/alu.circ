@@ -111,6 +111,11 @@
       <a name="label" val="ALUResult"/>
       <a name="width" val="32"/>
     </comp>
+    <comp lib="0" loc="(1090,820)" name="Probe">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="radix" val="16"/>
+    </comp>
     <comp lib="0" loc="(1110,670)" name="Probe">
       <a name="appearance" val="classic"/>
       <a name="radix" val="16"/>
@@ -551,8 +556,11 @@
     <wire from="(1000,770)" to="(1000,800)"/>
     <wire from="(1000,770)" to="(1020,770)"/>
     <wire from="(1040,780)" to="(1040,790)"/>
-    <wire from="(1040,790)" to="(1080,790)"/>
+    <wire from="(1040,790)" to="(1060,790)"/>
     <wire from="(1060,700)" to="(1070,700)"/>
+    <wire from="(1060,790)" to="(1060,820)"/>
+    <wire from="(1060,790)" to="(1080,790)"/>
+    <wire from="(1060,820)" to="(1090,820)"/>
     <wire from="(1070,670)" to="(1070,700)"/>
     <wire from="(1070,670)" to="(1110,670)"/>
     <wire from="(1070,700)" to="(1090,700)"/>
