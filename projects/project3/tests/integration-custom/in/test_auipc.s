@@ -1,0 +1,3 @@
+auipc s0, 0x123
+auipc s0, 0x234
+auipc s0, 0x456
