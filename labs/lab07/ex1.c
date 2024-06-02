@@ -53,7 +53,12 @@ long long int sum_simd(int vals[NUM_ELEMS]) {
 
     for(unsigned int w = 0; w < OUTER_ITERATIONS; w++) {
         /* YOUR CODE GOES HERE */
-
+        __m128i sum = _mm_setzero_si128();
+        __m128i vec128 = _mm_set_epi32(128, 128, 128, 128);
+        for (unsigned int i = 0; i < NUM_ELEMS; i += 4) {
+            __m128i temp = _mm_loadu_epi32(vals[i]);
+            temp = _mm_and_epi32(temp, )
+        }
         /* Hint: you'll need a tail case. */
     }
 
